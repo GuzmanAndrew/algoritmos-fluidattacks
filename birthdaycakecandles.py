@@ -16,7 +16,7 @@ DATA_INT = []
 
 for line in DATA:
     TYPE_DATA = line.split()
-    DATA_INT = map(int, TYPE_DATA)
+    DATA_INT = list(map(int, TYPE_DATA))
 
 
 DATA_FIND = DATA_INT.count(82)
@@ -25,5 +25,5 @@ print(DATA_FIND)
 
 FILE_OPEN.close()
 
-# $ python birthday_cake_candles.py
+# $ python guzmanandrew.py
 # 7

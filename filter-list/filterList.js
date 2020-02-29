@@ -2,7 +2,6 @@
  * No code problems detected
  * $ npx eslint filterList.js
  */
-let array = [1,2,'a','b']
 
 function filter_list(arr) {
     for (let i = 0; i < arr.length; i++) {
@@ -12,7 +11,7 @@ function filter_list(arr) {
     }
 }
 
-filter_list(array)
+filter_list([1,2,'a','b'])
 
 /*
 $ node filterList.js

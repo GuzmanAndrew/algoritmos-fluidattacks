@@ -1,5 +1,5 @@
 def titleize(str)
-    str.split(/ |\_/).map(&:capitalize).join(" ")
+    str.split().map(&:capitalize).join(" ")
 end
 
 File.open('DATA.lst', 'r') do |f1|

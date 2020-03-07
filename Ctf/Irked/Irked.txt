@@ -21,3 +21,5 @@ UPupDOWNdownLRlrBAbaSSss
 https://www.hackingarticles.in/hack-the-box-irked-walkthrough/
 https://www.youtube.com/watch?v=2SAkYoNchys
 https://sistemas.com/irc.php
+
+sudo searchsploit UnrealIRCd

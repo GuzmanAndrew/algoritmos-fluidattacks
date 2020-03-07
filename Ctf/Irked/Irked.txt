@@ -21,3 +21,13 @@ UPupDOWNdownLRlrBAbaSSss
 https://www.hackingarticles.in/hack-the-box-irked-walkthrough/
 https://www.youtube.com/watch?v=2SAkYoNchys
 https://sistemas.com/irc.php
+
+sudo searchsploit UnrealIRCd
+
+uid=1000(djmardov) gid=1000(djmardov) groups=1000(djmardov),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev),110(lpadmin),113(scanner),117(bluetooth)
+
+uid=0(root) gid=1000(djmardov) groups=1000(djmardov),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev),110(lpadmin),113(scanner),117(bluetooth)
+
+https://blog.carreralinux.com.ar/2016/10/suid-y-sgid-programas-linux/
+
+https://blog.carreralinux.com.ar/2016/10/permisos-elevados-suid-sgid/

@@ -20,8 +20,8 @@ Feature:
     | Metasploit      | 5.0.73-dev  |
     | Steghide        | 0.5.1       |
   Machine information:
-    Given the machine 10.10.10.117 is on
-    When I execute a ping command
+    Given the machine has an IP 10.10.10.117
+    And it has a Linux operating system
 
   Scenario: Information gathering
     Given that I run the following "nmap" command
@@ -41,13 +41,16 @@ Feature:
     When I decide to run port 80
     Then a web page with a single image and a text comes out
     And I download the image to scan it later
-    When I make the decision to execute a command to see if that port has any endpoint
+    When I make the decision to execute a command
+    And it is to see if that port has any endpoint
     """
-    $ gobuster dir -u http://10.10.10.117/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html
+    $ gobuster dir -u http://10.10.10.117/
+      -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+      -x php,txt,html
     """
-    And I see that it does not have an external service that is interesting
+    Then I see that it does not have an external service that is interesting
     When I go back to the website I analyze the code
-    Then I see that it has nothing interesting, but it has a text that catches my attention
+    Then I see a text that catches my attention
     """
     <b>IRC is almost working!</b>
     """
@@ -73,10 +76,10 @@ Feature:
     """
     And it has an exploit to run with metasploit
     """
-    UnrealIRCd 3.2.8.1 - Backdoor Command Execution (Metasploit)                                                             | exploits/linux/remote/16922.rb
-    UnrealIRCd 3.2.8.1 - Local Configuration Stack Overflow                                                                  | exploits/windows/dos/18011.txt
-    UnrealIRCd 3.2.8.1 - Remote Downloader/Execute                                                                           | exploits/linux/remote/13853.pl
-    UnrealIRCd 3.x - Remote Denial of Service    
+    UnrealIRCd 3.2.8.1 - Backdoor Command Execution (Metasploit)
+    UnrealIRCd 3.2.8.1 - Local Configuration Stack Overflow
+    UnrealIRCd 3.2.8.1 - Remote Downloader/Execute
+    UnrealIRCd 3.x - Remote Denial of Service
     """
 
   Scenario: Fail: Image scan
@@ -110,7 +113,7 @@ Feature:
     Name    Current Setting  Required
    ----    ---------------  --------
     RHOSTS                   yes
-    RPORT   6667             yes  
+    RPORT   6667             yes
     """
     And I decide to start with RHOSTS
     """
@@ -162,7 +165,7 @@ Feature:
 
   Scenario: Fail: user.txt file permissions
     Given I found a user.txt file
-    When I decide to see its contents with the "cat" command 
+    When I decide to see its contents with the "cat" command
     And unfortunately I don't have permits
 
   Scenario: Success: Get pass1
@@ -241,13 +244,13 @@ Feature:
     Then I see that it has a folder called "root"
     And I don't have permissions to access the folder
 
-  Scenario: Success: Getting Root Flag
-    Given I don't have access to the root folder
+  Scenario: Success: Search for files with SUID permissions
+    Given I don't have access to the "root" folder
     When I decide to see my UID
     """
     djmardov@irked:~/Documents$ id
     """
-    Then I realize that the UID is not root
+    Then I realize that the UID is not "root"
     """
     uid=1000(djmardov)
     """
@@ -277,7 +280,7 @@ Feature:
     And I see that it has no "listuser" file
 
   Scenario: Error: run viewuser a second time
-    Given the "viewuser" file does not exist
+    Given the "listuser" file does not exist
     When I decide to use a fork
     """
     ~/Documents$ echo 'root' > /tmp/listusers
@@ -314,7 +317,7 @@ Feature:
     And we see that UID is now "root"
     When I also assumed that every system must have a "root" user
     And it is because as the file is called "viewuser"
-    When I thought that the value you are looking for by default is "root"
+    When I thought that "viewuser" is looking for "root" by default
     Then I make the decision to return to the "/" path
     And I decide to enter the "root" folder again
     When I execute the "ls" command to list de content

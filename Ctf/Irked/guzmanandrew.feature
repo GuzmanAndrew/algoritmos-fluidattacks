@@ -20,8 +20,8 @@ Feature:
     | Metasploit      | 5.0.73-dev  |
     | Steghide        | 0.5.1       |
   Machine information:
-    Given the machine 10.10.10.117 is on
-    When I execute a ping command
+    Given the machine has an IP 10.10.10.117
+    And it has a Linux operating system
 
   Scenario: Information gathering
     Given that I run the following "nmap" command
@@ -241,13 +241,13 @@ Feature:
     Then I see that it has a folder called "root"
     And I don't have permissions to access the folder
 
-  Scenario: Success: Getting Root Flag
-    Given I don't have access to the root folder
+  Scenario: Success: Search for files with SUID permissions
+    Given I don't have access to the "root" folder
     When I decide to see my UID
     """
     djmardov@irked:~/Documents$ id
     """
-    Then I realize that the UID is not root
+    Then I realize that the UID is not "root"
     """
     uid=1000(djmardov)
     """
@@ -277,7 +277,7 @@ Feature:
     And I see that it has no "listuser" file
 
   Scenario: Error: run viewuser a second time
-    Given the "viewuser" file does not exist
+    Given the "listuser" file does not exist
     When I decide to use a fork
     """
     ~/Documents$ echo 'root' > /tmp/listusers
@@ -314,7 +314,7 @@ Feature:
     And we see that UID is now "root"
     When I also assumed that every system must have a "root" user
     And it is because as the file is called "viewuser"
-    When I thought that the value you are looking for by default is "root"
+    When I thought that "viewuser" is looking for "root" by default
     Then I make the decision to return to the "/" path
     And I decide to enter the "root" folder again
     When I execute the "ls" command to list de content
@@ -326,3 +326,4 @@ Feature:
     """
     # FLAG ROOT = <FLAG>
     """
+

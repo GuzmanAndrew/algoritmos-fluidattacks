@@ -24,7 +24,7 @@ Feature:
     When I execute a ping command
 
   Scenario: Information gathering
-    Given that I run the following Nmap command
+    Given that I run the following "nmap" command
     """
     $ nmap -sV 10.10.10.117 --open
     """
@@ -73,9 +73,9 @@ Feature:
     """
     And it has an exploit to run with metasploit
     """
-    UnrealIRCd 3.2.8.1 - Backdoor Command Execution (Metasploit) | exploits/linux/remote/16922.rb
-    UnrealIRCd 3.2.8.1 - Local Configuration Stack Overflow | exploits/windows/dos/18011.txt
-    UnrealIRCd 3.2.8.1 - Remote Downloader/Execute | exploits/linux/remote/13853.pl
+    UnrealIRCd 3.2.8.1 - Backdoor Command Execution (Metasploit)                                                             | exploits/linux/remote/16922.rb
+    UnrealIRCd 3.2.8.1 - Local Configuration Stack Overflow                                                                  | exploits/windows/dos/18011.txt
+    UnrealIRCd 3.2.8.1 - Remote Downloader/Execute                                                                           | exploits/linux/remote/13853.pl
     UnrealIRCd 3.x - Remote Denial of Service    
     """
 
@@ -249,29 +249,41 @@ Feature:
     """
     Then I realize that the UID is not root
     """
-    uid=1000(djmardov) gid=1000(djmardov) groups=1000(djmardov),24(cdrom),
-    25(floppy),29(audio),30(dip),44(video),46(plugdev),
-    108(netdev),110(lpadmin),113(scanner),117(bluetooth)
+    uid=1000(djmardov)
     """
     When I decide to increase privileges
     And for that I execute this instruction
     """
-    djmardov@irked:~/Documents$ find / -perm -u=s -type f 2>/dev/null
+    djmardov@irked:~/Documents$ find / -type f -perm -u+s
     """
     When I see that there is a file that catches my attention
     """
     $ /usr/bin/viewuser
     """
+
+  Scenario: Fail: execute viewuser
+    Given I found a file with SUID permissions
+    When I decide to run the file
+    """
+    $ /usr/bin/viewuser
+    """
     Then if I run that file it will generate an error
-    And it's because there is no file
+    And it is because the "viewuser" searches for data within "listuser"
+    When I decide to go to the "tmp" route
     """
-    $ /tmp/listuser
+    $ cd /tmp
     """
+    Then I execute the "ls" command to list the content
+    And I see that it has no "listuser" file
+
+  Scenario: Error: run viewuser a second time
+    Given the "viewuser" file does not exist
     When I decide to use a fork
     """
-    ~/Documents$ echo '/bin/sh' > /tmp/listusers
+    ~/Documents$ echo 'root' > /tmp/listusers
     """
-    Then the listeruser file was created with the previous fork
+    Then the "listeruser" file was created with the previous fork
+    When I use "root" it is for the UID
     And I must enable all permissions
     """
     ~/Documents$ chmod 777 /tmp/listusers
@@ -280,14 +292,37 @@ Feature:
     """
     $ /usr/bin/viewuser
     """
-    And I'm already in a terminal but with SUID permissions
-    When I make the decision to return to the root folder
-    Then I decide to enter that folder again
-    And executed an "ls" command
-    When I see that there is a root.txt file
-    Then it is just to execute a "cat" command to see the flag
+    And I realize that placing the "root" does not work
+
+  Scenario: Success: Getting Root Flag
+    Given that with "root" did not work
+    When I decide to use a fork but with "/bin/bash"
+    """
+    ~/Documents$ echo '/bin/bash' > /tmp/listusers
+    """
+    Then the "listuser" content will be overwritten with "/bin/bash"
+    When I put the "/bin/bash" I thought that when I run it a Shell will appear
+    And I run "viewuser"
+    """
+    $ /usr/bin/viewuser
+    """
+    When I realize that it worked because I am in the "root" user
+    Then I execute the "id" command to confirm
+    """
+    uid=0(root)
+    """
+    And we see that UID is now "root"
+    When I also assumed that every system must have a "root" user
+    And it is because as the file is called "viewuser"
+    When I thought that the value you are looking for by default is "root"
+    Then I make the decision to return to the "/" path
+    And I decide to enter the "root" folder again
+    When I execute the "ls" command to list de content
+    """
+    $ pass.txt  root.txt
+    """
+    Then I see that there is a root.txt file
+    And just execute a "cat" command to see the "root" flag
     """
     # FLAG ROOT = <FLAG>
     """
-
-  

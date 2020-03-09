@@ -1,31 +1,34 @@
 /*
  * No se detectaron problemas de código
- * $ npx eslint guzmanandrew.js
  */
-const fs = require("fs");
 
-fs.readFile("DATA.lst", "utf8", (err, data) => {
-    if(err) throw err;
-    const datafile = data;
-    vowelsAndConsonants(datafile);
-})
+const fileString = require('fs');
 
-function vowelsAndConsonants(s){
-    const sArray = s.split("");
-    sArray.forEach((char) => { 
-        if (/[aeiou]/.test(char) == true) {
-            console.log(char)
-        }
-    })
-    sArray.forEach((char) => {
-        if (/[^aeiou]/.test(char) == true) {
-            console.log(char)
-        }
-    })
+function vowelsAndConsonants(text) {
+  const sArray = text.split('');
+  sArray.forEach((char) => {
+    if (/[aeiou]/.test(char) === true) {
+      // console.log(char);
+    }
+  });
+  sArray.forEach((char) => {
+    if (/[^aeiou]/.test(char) === true) {
+      // console.log(char);
+    }
+  });
 }
+
+fileString.readFile('DATA.lst', 'utf8', (falla, datos) => {
+  if (falla) {
+    throw falla;
+  }
+  const datafile = datos;
+  vowelsAndConsonants(datafile);
+});
 
 /*
 $ node guzmanandrew.js
 salida:
 a a i o o j v s c r p t l p s
 */
+

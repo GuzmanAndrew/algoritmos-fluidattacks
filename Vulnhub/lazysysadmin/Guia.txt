@@ -59,6 +59,10 @@ https://nvd.nist.gov/vuln/detail/CVE-1999-0519
 
 https://nvd.nist.gov/vuln/detail/CVE-1999-0520
 
+https://vuldb.com/?id.14333
+
+https://cwe.mitre.org/data/definitions/269.html
+
 [STATUS] 240035785.86 tries/min, 1680250501 tries in 00:07h, 6002271999 to do in 00:26h, 1 active
 
 http://www.reydes.com/d/?q=Adivinar_Nombres_de_Usuarios_y_Contrasenas_sobre_SMB_utilizando_el_Script_smb_brute_de_Nmap
@@ -67,8 +71,6 @@ https://underc0de.org/foro/herramientas-hacking/acccheck-fuerza-bruta-en-protoco
 
 https://github.com/m4ll0k/SMBrute
 
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAoCAYAAAC8cqlMAAAB5UlEQVR42u2ZPWvCUBSGM+UfFO3e3dLu/QN+oKj4EUXRQREEJYgoiCAu6qCogyDo7iJ21UUaKqEgCC4iiEMGB3UVgsnpTWj/wfVK2nvhGbKEPJyT996TMMzPGg6H5mKx+GgkyuWyeTQasb8OTDwef4tEIp8+n+/LYIjJZJJHQiwzm81M6OLDarWqNpsNjEYgEJCy2ewT0+/3TagighElNFAnQT6ft1ARKkJFqMgfFvF4PFpuEwFtdrcRqVarIIoirFYrIiyXSxiPx+B2u/GJBINBuF6vQHopigK1Wg2fCMdxcLlciIuoqgqNRgOfiN1uB3Qwg91uB8fjkQiHwwEmkwne1qLxS0VuKKJle71eh06nQ4Rmswk8z+MVcTqdsNlsQJZlotF7Pp8hk8ngE4lGo/qN7xG/vV4Pb0Xm8zlxkdPpBGgMx/+yJxIJKBQKRMjlcuBwOGhq/Q+RcDgMsViMCFrAuFwu/CKDwQC22y1IkkSE/X4PgiDo+xc2Ea0S9zjGa/Hb7Xbxifj9fj0K7yFSqVTwtlY6nYbpdKpPiSRYLBbQarX0PYymFhWhIlSEilCRW6GdyUqlkoVZr9dsKpXiOY6TtW+7BkNBz/7ebrcf9L+6Xq+XRYPMMyrTq5EIhUIvaAjTJb4BBNQ2yhnth0wAAAAASUVORK5CYII=
+https://notasinformaticas.com/samba-share-enumerator-smbmap/
 
-#%21page-use-backnode
-
-Finally I can checkoff website development from my todolist
+https://blog.segu-info.com.ar/2015/05/smbmap-buscar-datos-recursos.html?m=0

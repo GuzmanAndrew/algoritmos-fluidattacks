@@ -1,3 +1,5 @@
+-------------------------------------------- PRIMERA SOLUCIÓN --------------------------------------
+
 nmap -sV -p- 192.168.0.32 --open
 
 22/tcp   open  ssh         OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.8 (Ubuntu Linux; protocol 2.0)
@@ -74,3 +76,25 @@ https://github.com/m4ll0k/SMBrute
 https://notasinformaticas.com/samba-share-enumerator-smbmap/
 
 https://blog.segu-info.com.ar/2015/05/smbmap-buscar-datos-recursos.html?m=0
+
+https://eltallerdelbit.com/clientes-smb-samba/
+
+https://www.computerhope.com/unix/smbclien.htm
+
+https://www.tldp.org/HOWTO/SMB-HOWTO-8.html
+
+https://blog.desdelinux.net/samba-smbclient/
+
+-------------------------------------------- SEGUNDA SOLUCIÓN --------------------------------------
+
+- en la pagina de wordress podemos ir a la ruta 192.168.0.32/wordpress/wp-admin para ir al login
+
+- Si entramos al directorio de "Other Location" de nuestra capeta en Kali en la parte de abajo hay un input que dice 
+"Conect to server" y si colocamos smb://http://192.168.0.32 y ya estamos dentro de los directios de SAMBA nos va a pedir credenciales pero podemos probar con el usuario "Anonymous"
+
+- La contraseña de la base de datos sirve para el login de wordpress con el usuario admin
+estando en el dashboard podemos ir a el Template "404 template" borramos todo el codigo y pegamos un codigo de shell reverse con PHP
+
+- Luego vamos a ir a la pagina wen que esta echa en wordpress y seleccionamos los comentarios y en la URL a la variable P le colocamos un 3 así 192.168.0.32/wordpress/?p=3#comments, esto se debe a que el "template 404" va a lanzar un mensaje encaso de que no encuentre un recurso en el servidor y al colocar el comentario numero 3 en la variable P se va a lanzar el "template 404" y ya se obtiene una escucha con netcat asi "nc -lvp 4444" porque va hacer un error ya que solo hay dos comentarios. Podemos colocar el PROMPT de python y despues colocar "export TERM=linux" para tener mas uso de los comandos
+
+- Al conectarnos con netcat somos usuarios "www-data" luego colocamos sudo togie, ingresamos la password 12345 y ya somos otro usuario ahora tenemos que ser "root" entonces vamos a colocar "sudo id" para ver el números de identificación de usuario y de grupo tanto reales como efectivos. Nos da como resultado un numero cero y usuario "root", eso quiere decir que al usar el comando "sudo" para todo podemos ejecutar permiso de super usurio sin problemas y ya obtener el archivo "proof.txt"

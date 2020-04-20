@@ -85,6 +85,10 @@ https://www.tldp.org/HOWTO/SMB-HOWTO-8.html
 
 https://blog.desdelinux.net/samba-smbclient/
 
+https://e-mc2.net/es/sobre-el-archivo-etcpasswd
+
+https://masqueprogramar.wordpress.com/2016/02/01/comando-id/
+
 -------------------------------------------- SEGUNDA SOLUCIÓN --------------------------------------
 
 - en la pagina de wordress podemos ir a la ruta 192.168.0.32/wordpress/wp-admin para ir al login

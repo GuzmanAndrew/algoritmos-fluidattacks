@@ -1,0 +1,25 @@
++++ b/code/hackerrank/birthdaychocolate/OTHERS.lst
+@@ -3,3 +3,9 @@ https://raw.githubusercontent.com/danhenriquesc/hackerrank/master/algorithms/imp
+ https://raw.githubusercontent.com/RyanFehr/HackerRank/master/Algorithms/Implementation/Birthday%20Chocolate/Solution.cs
+ https://raw.githubusercontent.com/charles-wangkai/hackerrank/master/the-birthday-bar/Solution.java
+ https://raw.githubusercontent.com/143cracker/birthday-chocolate.py-/master/birthday.py
++https://raw.githubusercontent.com/saleem-hadad/hackerrank/master/Birthday%20Chocolate.c
++https://www.martinkysel.com/hackerrank-birthday-chocolate-solution/
++https://rishabh1403.com/posts/coding/hackerrank/2018/10/hackerrank-solution-of-birthday-chocolate-in-golang/
++https://hackerranksolutionsinc.blogspot.com/2019/04/birthday-chocolate-hackerrank-solution.html
++http://jaideepjagyasi.blogspot.com/2017/10/birthday-chocolate-hackerrank-solution.html
++http://problemsolvinginjava.blogspot.com/2018/07/birthday-chocolate.html
+diff --git a/code/hackerrank/camelcase/OTHERS.lst b/code/hackerrank/camelcase/OTHERS.lst
+index a516329a4..1376a84be 100644
+--- a/code/hackerrank/camelcase/OTHERS.lst
++++ b/code/hackerrank/camelcase/OTHERS.lst
+@@ -5,4 +5,7 @@ https://raw.githubusercontent.com/danhenriquesc/hackerrank/master/algorithms/str
+ https://raw.githubusercontent.com/danhenriquesc/hackerrank/master/algorithms/strings/camel_case.py
+ https://raw.githubusercontent.com/TomLous/hackerrank/master/src/main/scala/algorithms/strings/CamelCase.scala
+ https://raw.githubusercontent.com/raghav97/Hackerrank-Solutions/master/camelCase.rb
+-
++https://www.martinkysel.com/hackerrank-camelcase-solution/
++https://raw.githubusercontent.com/abrahamalbert18/HackerRank-Solutions-in-Python/master/camelCase
++http://brighterapi.com/camelcase-hackerrank-algorithm-solution-java/
++https://prosenc.blogspot.com/2016/08/camelcase-hacker-rank-problem-solution.html
+

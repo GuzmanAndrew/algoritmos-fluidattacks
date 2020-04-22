@@ -7,11 +7,13 @@ import math
 
 FILE_OPEN = open('DATA.lst', 'r')
 MESSAGE = FILE_OPEN.read()
+DATA = [MESSAGE]
 
-DATA = [MESSAGE] 
-
-def is_smart_number(num):
-    val = int(math.sqrt(num))
+def is_smart_number(number):
+    """
+    Method for finding the factors
+    """
+    val = int(math.sqrt(number))
     if num / val == val:
         return True
     return False
@@ -31,4 +33,4 @@ for line in DATA_INT:
 FILE_OPEN.close()
 
 # $ python cleancamera.py
-# 7
+# YES NO NO YES

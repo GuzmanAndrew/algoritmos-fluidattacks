@@ -9,6 +9,7 @@ FILE_OPEN = open('DATA.lst', 'r')
 MESSAGE = FILE_OPEN.read()
 DATA = [MESSAGE]
 
+
 def is_smart_number(number):
     """
     Method for finding the factors
@@ -17,6 +18,7 @@ def is_smart_number(number):
     if num / val == val:
         return True
     return False
+
 
 for line in DATA:
     TYPE_DATA = line.split()

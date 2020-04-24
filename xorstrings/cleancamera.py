@@ -47,7 +47,6 @@ print(strings_xor(s, t))
 # $ python cleancamera.py
 # 10000
 
-<<<<<<< HEAD
 -------------------------------------- TERCERA SOLUCION -------------------------------
 
 """
@@ -78,6 +77,4 @@ print(strings_xor(ARRAY_ONE, ARRAY_SECOND))
 
 # $ python cleancamera.py
 # 10000
-=======
 
->>>>>>> c3f3e1d8c046287b0550ea807cf300ea7ea195fa

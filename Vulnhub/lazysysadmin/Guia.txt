@@ -102,3 +102,8 @@ estando en el dashboard podemos ir a el Template "404 template" borramos todo el
 - Luego vamos a ir a la pagina wen que esta echa en wordpress y seleccionamos los comentarios y en la URL a la variable P le colocamos un 3 así 192.168.0.32/wordpress/?p=3#comments, esto se debe a que el "template 404" va a lanzar un mensaje encaso de que no encuentre un recurso en el servidor y al colocar el comentario numero 3 en la variable P se va a lanzar el "template 404" y ya se obtiene una escucha con netcat asi "nc -lvp 4444" porque va hacer un error ya que solo hay dos comentarios. Podemos colocar el PROMPT de python y despues colocar "export TERM=linux" para tener mas uso de los comandos
 
 - Al conectarnos con netcat somos usuarios "www-data" luego colocamos sudo togie, ingresamos la password 12345 y ya somos otro usuario ahora tenemos que ser "root" entonces vamos a colocar "sudo id" para ver el números de identificación de usuario y de grupo tanto reales como efectivos. Nos da como resultado un numero cero y usuario "root", eso quiere decir que al usar el comando "sudo" para todo podemos ejecutar permiso de super usurio sin problemas y ya obtener el archivo "proof.txt"
+
+-------------------------------------------- TERCERA SOLUCIÓN --------------------------------------
+
+- Se puede hacer un ataque de fuera bruta ya que el sitio esta echo con Wordpress
+- Para levantar privilegios primero hacemos el comando "sudo -l" y despues para se root es con "sudo -i"

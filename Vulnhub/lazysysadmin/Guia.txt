@@ -1,3 +1,5 @@
+-------------------------------------------- PRIMERA SOLUCIÓN --------------------------------------
+
 nmap -sV -p- 192.168.0.32 --open
 
 22/tcp   open  ssh         OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.8 (Ubuntu Linux; protocol 2.0)
@@ -59,6 +61,10 @@ https://nvd.nist.gov/vuln/detail/CVE-1999-0519
 
 https://nvd.nist.gov/vuln/detail/CVE-1999-0520
 
+https://vuldb.com/?id.14333
+
+https://cwe.mitre.org/data/definitions/269.html
+
 [STATUS] 240035785.86 tries/min, 1680250501 tries in 00:07h, 6002271999 to do in 00:26h, 1 active
 
 http://www.reydes.com/d/?q=Adivinar_Nombres_de_Usuarios_y_Contrasenas_sobre_SMB_utilizando_el_Script_smb_brute_de_Nmap
@@ -67,8 +73,37 @@ https://underc0de.org/foro/herramientas-hacking/acccheck-fuerza-bruta-en-protoco
 
 https://github.com/m4ll0k/SMBrute
 
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAoCAYAAAC8cqlMAAAB5UlEQVR42u2ZPWvCUBSGM+UfFO3e3dLu/QN+oKj4EUXRQREEJYgoiCAu6qCogyDo7iJ21UUaKqEgCC4iiEMGB3UVgsnpTWj/wfVK2nvhGbKEPJyT996TMMzPGg6H5mKx+GgkyuWyeTQasb8OTDwef4tEIp8+n+/LYIjJZJJHQiwzm81M6OLDarWqNpsNjEYgEJCy2ewT0+/3TagighElNFAnQT6ft1ARKkJFqMgfFvF4PFpuEwFtdrcRqVarIIoirFYrIiyXSxiPx+B2u/GJBINBuF6vQHopigK1Wg2fCMdxcLlciIuoqgqNRgOfiN1uB3Qwg91uB8fjkQiHwwEmkwne1qLxS0VuKKJle71eh06nQ4Rmswk8z+MVcTqdsNlsQJZlotF7Pp8hk8ngE4lGo/qN7xG/vV4Pb0Xm8zlxkdPpBGgMx/+yJxIJKBQKRMjlcuBwOGhq/Q+RcDgMsViMCFrAuFwu/CKDwQC22y1IkkSE/X4PgiDo+xc2Ea0S9zjGa/Hb7Xbxifj9fj0K7yFSqVTwtlY6nYbpdKpPiSRYLBbQarX0PYymFhWhIlSEilCRW6GdyUqlkoVZr9dsKpXiOY6TtW+7BkNBz/7ebrcf9L+6Xq+XRYPMMyrTq5EIhUIvaAjTJb4BBNQ2yhnth0wAAAAASUVORK5CYII=
+https://notasinformaticas.com/samba-share-enumerator-smbmap/
 
-#%21page-use-backnode
+https://blog.segu-info.com.ar/2015/05/smbmap-buscar-datos-recursos.html?m=0
 
-Finally I can checkoff website development from my todolist
+https://eltallerdelbit.com/clientes-smb-samba/
+
+https://www.computerhope.com/unix/smbclien.htm
+
+https://www.tldp.org/HOWTO/SMB-HOWTO-8.html
+
+https://blog.desdelinux.net/samba-smbclient/
+
+https://e-mc2.net/es/sobre-el-archivo-etcpasswd
+
+https://masqueprogramar.wordpress.com/2016/02/01/comando-id/
+
+-------------------------------------------- SEGUNDA SOLUCIÓN --------------------------------------
+
+- en la pagina de wordress podemos ir a la ruta 192.168.0.32/wordpress/wp-admin para ir al login
+
+- Si entramos al directorio de "Other Location" de nuestra capeta en Kali en la parte de abajo hay un input que dice 
+"Conect to server" y si colocamos smb://http://192.168.0.32 y ya estamos dentro de los directios de SAMBA nos va a pedir credenciales pero podemos probar con el usuario "Anonymous"
+
+- La contraseña de la base de datos sirve para el login de wordpress con el usuario admin
+estando en el dashboard podemos ir a el Template "404 template" borramos todo el codigo y pegamos un codigo de shell reverse con PHP
+
+- Luego vamos a ir a la pagina wen que esta echa en wordpress y seleccionamos los comentarios y en la URL a la variable P le colocamos un 3 así 192.168.0.32/wordpress/?p=3#comments, esto se debe a que el "template 404" va a lanzar un mensaje encaso de que no encuentre un recurso en el servidor y al colocar el comentario numero 3 en la variable P se va a lanzar el "template 404" y ya se obtiene una escucha con netcat asi "nc -lvp 4444" porque va hacer un error ya que solo hay dos comentarios. Podemos colocar el PROMPT de python y despues colocar "export TERM=linux" para tener mas uso de los comandos
+
+- Al conectarnos con netcat somos usuarios "www-data" luego colocamos sudo togie, ingresamos la password 12345 y ya somos otro usuario ahora tenemos que ser "root" entonces vamos a colocar "sudo id" para ver el números de identificación de usuario y de grupo tanto reales como efectivos. Nos da como resultado un numero cero y usuario "root", eso quiere decir que al usar el comando "sudo" para todo podemos ejecutar permiso de super usurio sin problemas y ya obtener el archivo "proof.txt"
+
+-------------------------------------------- TERCERA SOLUCIÓN --------------------------------------
+
+- Se puede hacer un ataque de fuera bruta ya que el sitio esta echo con Wordpress
+- Para levantar privilegios primero hacemos el comando "sudo -l" y despues para se root es con "sudo -i"

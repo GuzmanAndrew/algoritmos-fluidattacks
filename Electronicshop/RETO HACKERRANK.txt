@@ -1,0 +1,37 @@
+Por ejemplo, supongamos que tiene que gastar 60 pesos. Tres tipos de teclados cuestan 50, 40 y 60 pesos. Dos memorias USB cuestan 5, 8 y 12 pesos. Ella podría comprar un teclado de 40 mas una usb de 12 que  en total seria 52, o un teclado de 50 mas unsa usb d 8 que seria en total 58.Ella elige el último es decir el de 58.
+
+No puede comprar más de dos artículos, así que no puede gastar exactamente 60.
+
+Completa la función "GetMoneySpent" en el editor de abajo. Debe devolver el precio máximo total de los dos artículos dentro del presupuesto de Mónica o -1 si no puede permitirse ambos artículos.
+
+getMoneySpent tiene los siguientes parámetros:
+
+keyboard: un conjunto de números enteros que representan los precios de los teclados
+drivers: un conjunto de números enteros que representan los precios de las unidades
+b: las unidades monetarias del presupuesto de Mónica
+
+La primera línea contiene tres números enteros separados por espacios b, n y m, su presupuesto, el número de modelos de teclado y el número de modelos de unidades USB.
+
+La segunda línea contiene n números enteros separados por espacio en el keyboard[i], los precios de cada modelo de teclado.
+La tercera línea contiene m enteros separados por drivers, los precios de las unidades USB.
+
+Imprime un solo entero que denote la cantidad de dinero que Mónica gastará. Si no tiene suficiente dinero para comprar un teclado y una unidad USB, imprime -1 en su lugar.
+
+
+10 2 3
+3 1
+5 2 8
+
+9
+
+EXPLICACION: Monica tiene 10 dolares, hay dos tipos de teclados es decir dos modelos y 3 modelos de USB, el primer modelo de teclado cuesta 3 dolares y el segundo modelo 1 dolar. El primer modelo de USB cuesta 5 dolares el segundo modelo 2 dolares y el tercero 8 dolares
+
+Ella puede comprar el 2º teclado y la 3ª unidad USB por un coste total de 8+1 = 9.
+
+5 1 1
+4
+5
+
+-1
+
+No hay forma de comprar un teclado y una unidad USB porque 4 + 5 > 5, así que imprimimos -1.

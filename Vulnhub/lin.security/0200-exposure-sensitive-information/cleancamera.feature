@@ -9,7 +9,7 @@ Feature:
   Location:
     182.168.0.22
   CWE:
-    CWE-269: Improper Privilege Management
+    CWE-200: Exposure of Sensitive Information to an Unauthorized Actor
   Rule:
     REQ.181 Transmit data using secure protocols
   Goal:
@@ -36,10 +36,9 @@ Feature:
     """
     When I see the open ports
     """
-    PORT	STATE SERVICE VERSION
-    22/tcp	open	ssh	OpenSSH 7.6p1 Ubuntu 4
-    111/tcp	open	rpcbind 2-4 (RPC #100000)
-    2049/tcp open	nfs_acl 3 (RPC #100227)
+    22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4
+    111/tcp open rpcbind 2-4 (RPC #100000)
+    2049/tcp open nfs_acl 3 (RPC #100227)
     """
     Then I decide to do some research on the NFS service
     And I saw that it's a file-sharing system on a LAN
@@ -49,11 +48,11 @@ Feature:
     Then I can't perform a static detection
 
   Scenario: Dynamic detection
-    Since I found the "NFS" service
+    Given I found the "NFS" service
     When I decide to use "Nessus" to see if it has a vulnerability
     And it has a critical vulnerability and it's this
     """
-    Critical -> NFS Exported Share Information Disclosure
+    NFS Exported Share Information Disclosure
     """
     And his description is this
     """
@@ -61,6 +60,7 @@ Feature:
     be mounted by the scanning host. An attacker may be able to leverage
     this to read (and possibly write) files on remote host.
     """
+    When I researching more about NFS
 
   Scenario: Exploitation
     Given the machine has an "NFS" vulnerability
@@ -70,16 +70,16 @@ Feature:
     When I see that the "showmount" command caught my attention
     Then I see in the documentation that your execution structure is this
     """
-    $ showmount [ -ade ] [ host ]
+    $ showmount -ade host
     """
     Then I tried them out one by one and this is the result
     """
-    $ showmount -a 192.168.0.22 -> “All mount points on 192.168.0.22:”
-    $ showmount -d 192.168.0.22 -> “Directories on 192.168.0.22:”
+    $ showmount -a 192.168.0.22 “All mount points on 192.168.0.22:”
+    $ showmount -d 192.168.0.22 “Directories on 192.168.0.22:”
     """
     And the "-e" option is the one that turned out to be interesting
     """
-    $ showmount -e 192.168.0.22 -> Export list for 192.168.0.22: /home/peter *
+    $ showmount -e 192.168.0.22 Export list for 192.168.0.22: /home/peter *
     """
     Then I find for a way to mount that directory
     And I create a folder called "linsec" to mount inside
@@ -93,7 +93,7 @@ Feature:
     Then I start researching more "NFS"
     And I see that when you mount a "NFS" you will use the "UID"
     And "GUID" of the current user
-    When I decide to look at the "UID" in the "/home/peter" folder like this
+    When I decide to look at the "UID" in the "peter" folder like this
     """
     $ stat linsec
     """
@@ -112,7 +112,7 @@ Feature:
     """
     $ ssh-keygen -t rsa -b 2048
     """
-    When I go to the folder where the "/home/peter" directory is mounted
+    When I go to the folder where the "peter" directory is mounted
     Then I create a folder called ".ssh"
     And I can see the hidden folders including the one I created así
     """
@@ -127,9 +127,9 @@ Feature:
     $ ssh peter@192.168.0.22
     """
     And I enter as user "Peter".
-    When I decide to view the file "/etc/shadow" but I don't have permissions
-    Then I decide to look at the file "/etc/passwd" and if I have access
-    When I to copy in "Kali" all the contents of the file "/etc/passwd"
+    When I decide to view the file "shadow" but I don't have permissions
+    Then I decide to look at the file "passwd" and if I have access
+    When I to copy in "Kali" all the contents of the file "passwd"
     And is for to discover the password with "John the Ripper"
     """
     $ john --wordlist=/root/rockyou.txt hashlinsec

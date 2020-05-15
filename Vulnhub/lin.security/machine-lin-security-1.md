@@ -95,7 +95,8 @@ $ su linsecurity
 
 1. Hay otra forma de usar “John de ripper” y esta:
 ```
-$ john --format=crypt --show linsec.txt john --format=crypt --show linsec
+$ john --format=crypt --show linsec.txt
+$ john --format=crypt --show linsec
 ```
 2. Y el resultado seria este:
 ```

@@ -7,7 +7,7 @@ Feature:
   Category:
     CTF
   User:
-    GuzmanAndrew
+    Ar4m1r3z
   Goal:
     Escalate privileges to get two flags that are root and user.
 

@@ -20,3 +20,8 @@ feat(back): #223.7 java compiler
 - Add utf 8 support to provisioner
 - Fix existing java solution
 
+https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez#:~:text=Si%20quieres%20comprobar%20tu%20configuraci%C3%B3n,.name%3DJohn%20Doe%20user.
+
+https://stackoverflow.com/questions/6243407/delete-username-from-a-git-repository
+
+https://help.github.com/es/github/using-git/setting-your-username-in-git

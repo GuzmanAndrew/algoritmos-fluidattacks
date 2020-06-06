@@ -1,0 +1,62 @@
+
+--------------------------------------- HACKER RANK ---------------------------------------------------
+
+sol(code): #0 hackerrank, electronicsshop (15)
+    
+- others: 0 in, 0 out, 0 total.
+- score: 70.00 initial, 85.00 final, 15 progress.
+- global-rank: 2961 initial, 2261 final, 700 progress.
+- national-rank: 2340 initial, 2262 final, 78 progress.
+- effort: 8 hours during challenges, productivity 1.87 points/hour.
+
+sol(code): #0 hackerrank, day2loops (easy)
+    
+- others: 0 in, 0 out, 0 total.
+- score: 01.65 initial, 02.30 final, 0.65 progress.
+- global-rank: 2961 initial, 2261 final, 700 progress.
+- national-rank: 2340 initial, 2262 final, 78 progress.
+- effort: 8 hours during challenges, productivity 0.08125 points/hour.
+
+--------------------------------------- CODE WARS ---------------------------------------------------
+
+sol(code): #0 codewars, jadencasing (7)
+    
+- others: 0 in, 0 out, 0 total.
+- score: 1 initial, 8 final, 7 progress.
+- global-rank: 76591 initial, 4856 final, 71735 progress.
+- national-rank: 0 initial, 0 final, 0 progress.
+- effort: 10 hours during challenges, productivity 0.7 points/hour.
+
+--------------------------------------- HACK THE BOX ---------------------------------------------------
+
+sol(hack): #0 tryhackme, agent (270)
+
+- others: 0 in, 0 out, 0 total.
+- score: 120 initial, 390 final, 270 progress.
+- global-rank: 38538 initial, 23403 final, 15135 progress.
+- national-rank: 73 initial, 72 final, 1 progress.
+- effort: 14 hours during challenges, productivity 19.28 points/hour.
+
+
+---------------------------------------- refactor -----------------------------
+
+refac(code): #0 modified folder birthdaycakecandle
+      
+- modified language program.
+
+
+-------------------------------------- VBD -------------------------------------------------------------
+
+sol(vbd): #0 typo, 0521-weak-pass-requiret
+    
+- discovered vulnerabilities: 1 by me, 0 already in repo, 1 total.
+- total estimated vulnerabilities in system:   1
+- discovery percentage:                        100%
+- effort: 10 hours during challenges.
+
+
+refac(vbd): #0 modified folders
+
+- Links Others folder dc-1
+
+

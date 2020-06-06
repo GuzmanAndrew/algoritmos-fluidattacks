@@ -1,0 +1,22 @@
+"git checkout master" = to get back on the master branch
+
+"git pull origin master" = to get the most up-to-date version of the master branch
+
+"git checkout newBranch" = to get back on your newBranch
+
+git rebase origin/master -i
+
+git reset --hard HEAD~1
+
+Buscar en el codigo donde hay tabulaciones:
+
+curl -s -L -H "private-token: Bearer ${GITLAB_TOKEN}" https://gitlab.com/fluidattacks/writeups/-/raw/1bdcec9d28d0731ab7e607c60a2dbd8d78985407/vbd/linsecurity/0269-improver-prvilege-management/cleancamera.feature | grep -P '\t'
+
+solo se debe de cambiar la parte de "vbd/lazysysadmin/0269-improver-prvilege-management/cleancamera.feature" por el reto nuevo que se esta solucionando
+
+feat(back): #223.7 java compiler
+    
+- Add compiler helper
+- Add utf 8 support to provisioner
+- Fix existing java solution
+

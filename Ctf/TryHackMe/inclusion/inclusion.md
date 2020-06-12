@@ -48,8 +48,14 @@ http://10.10.59.190/article?name=../../../../../../etc/passwd
 falconfeast:rootpassword
 ```
 - Pruebo esas contraseñas en **SSH** y ha funcionado
+<<<<<<< HEAD
 - Luego puedo sacar la bandera de **user.txt**
 - Vamos a ejecutar el **sudo -l** para ver que archivos se pueden ejecutar como root
+=======
+
+- Luego puedo sacar la bandera de **user.txt**
+- Vamos a ejecutar el **sudo -l** para ver archivos se pueden ejecutar
+>>>>>>> 7b7cd6683757345985266a0d1304f698979b6643
 - El resultado fue este:
 ```
 (root) NOPASSWD: /usr/bin/socat

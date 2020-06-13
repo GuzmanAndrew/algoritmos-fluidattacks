@@ -1,4 +1,3 @@
-
 --------------------------------------- HACKER RANK ---------------------------------------------------
 
 sol(code): #0 hackerrank, electronicsshop (15)
@@ -58,5 +57,4 @@ sol(vbd): #0 typo, 0521-weak-pass-requiret
 refac(vbd): #0 modified folders
 
 - Links Others folder dc-1
-
 

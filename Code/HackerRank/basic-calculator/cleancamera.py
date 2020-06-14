@@ -57,3 +57,22 @@ quo_div(NUM_ONE, NUM_TWO)
 # -1.7
 # 9.2
 # 0.57
+
+print("----------------------------------------SEGUNDA SOLUCIÒN---------------------------------------------")
+
+a = float(input())
+b = float(input())
+
+suma = a + b
+resta = a - b
+multiplicacion = a * b
+division = a / b
+cociente = a // b
+
+# El "{0:.2f}".format(valor numerico) nos sirve para coloca dos numero despues del punto decimal
+
+print("{0:.2f}".format(suma))
+print ("{0:.2f}".format(resta))
+print ("{0:.2f}".format(multiplicacion))
+print ("{0:.2f}".format(division))
+print ("{0:.2f}".format(cociente))

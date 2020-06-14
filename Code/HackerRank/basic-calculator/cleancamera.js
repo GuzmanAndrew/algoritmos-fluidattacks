@@ -5,16 +5,41 @@
 
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-const fileString = require('fs');
+var fileString = require('fs');
+
+var dataNumOne = 0
+var dataNumTwo = 0
+var sum = 0
+
+function sumOne(param1, param2){
+  sum = param1 + param2
+  console.log(sum.toFixed(2))
+}
+
+function resOne(param1, param2){
+  sum = param1 - param2
+  console.log(sum.toFixed(2))
+}
+
+function mulOne(param1, param2){
+  sum = param1 * param2
+  console.log(sum.toFixed(2))
+}
+
+function divOne(param1, param2){
+  sum = param1 / param2
+  console.log(sum.toFixed(2))
+}
 
 fileString.readFile('DATA.lst', 'utf8', (fail, inputData) => {
   if (fail) {
     throw fail;
   }
-  const datafile = inputData;
-  const dataresult = datafile.split(" ")
-  const dataUno = dataresult[0]
-  const dataDos = dataresult[1]
+
+  var datafile = inputData;
+  var dataresult = datafile.split(" ")
+  var dataUno = dataresult[0]
+  var dataDos = dataresult[1]
   
   // Saber tipo de dato:
   //const sumOne = typeof(dataUno)
@@ -25,26 +50,21 @@ fileString.readFile('DATA.lst', 'utf8', (fail, inputData) => {
   // Casting de string a int
   dataNumTwo = parseFloat(dataDos)
 
-  sumOne = dataNumOne + dataNumTwo
+  sumOne(dataNumOne, dataNumTwo)
 
-  restOne = dataNumOne - dataNumTwo
+  resOne(dataNumOne, dataNumTwo)
 
-  mulOne = dataNumOne * dataNumTwo
+  mulOne(dataNumOne, dataNumTwo)
 
-  divOne = dataNumOne / dataNumTwo
-
-  console.log(sumOne.toFixed(2))
-
-  console.log(restOne.toFixed(2))
-
-  console.log(mulOne.toFixed(2))
-
-  console.log(divOne.toFixed(2))
+  divOne(dataNumOne, dataNumTwo)
 
 });
 
 /*
 $ node guzmanandrew.js
 output:
-a a i o o j v s c r p t l p s
+6.30
+-1.70
+9.20
+0.57
 */

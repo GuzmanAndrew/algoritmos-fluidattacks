@@ -18,13 +18,13 @@ sol(code): #0 hackerrank, day2loops (easy)
 
 --------------------------------------- CODE WARS ---------------------------------------------------
 
-sol(code): #0 hackerrank, xorstring (1)
+sol(code): #0 hackerrank, basic-calculator (1)
     
 - others: 0 in, 0 out, 0 total.
-- score: 00.00 initial, 01.00 final, 1 progress.
+- score: 01.00 initial, 02.00 final, 1 progress.
 - global-rank: 2961 initial, 2261 final, 700 progress.
 - national-rank: 2340 initial, 2262 final, 78 progress.
-- effort: 14 hours during challenges, productivity 0.071 points/hour.
+- effort: 11 hours during challenges, productivity 0.09 points/hour.
 
 --------------------------------------- HACK THE BOX ---------------------------------------------------
 

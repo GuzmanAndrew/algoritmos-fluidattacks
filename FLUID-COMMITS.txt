@@ -28,13 +28,13 @@ sol(code): #0 hackerrank, basic-calculator (1)
 
 --------------------------------------- HACK THE BOX ---------------------------------------------------
 
-sol(hack): #0 tryhackme, agent (270)
+sol(hack): #0 tryhackme, ohsint (600)
 
 - others: 0 in, 0 out, 0 total.
-- score: 120 initial, 390 final, 270 progress.
+- score: 390 initial, 990 final, 600 progress.
 - global-rank: 38538 initial, 23403 final, 15135 progress.
 - national-rank: 73 initial, 72 final, 1 progress.
-- effort: 14 hours during challenges, productivity 19.28 points/hour.
+- effort: 11 hours during challenges, productivity 54.54 points/hour.
 
 
 ---------------------------------------- refactor -----------------------------

@@ -8,23 +8,37 @@ sol(code): #0 hackerrank, electronicsshop (15)
 - national-rank: 2340 initial, 2262 final, 78 progress.
 - effort: 8 hours during challenges, productivity 1.87 points/hour.
 
-sol(code): #0 hackerrank, day2loops (easy)
+sol(code): #0 hackerrank, twostring (25.00)
     
 - others: 0 in, 0 out, 0 total.
-- score: 01.65 initial, 02.30 final, 0.65 progress.
+- score: 21.00 initial, 46.00 final, 25.00 progress.
 - global-rank: 2961 initial, 2261 final, 700 progress.
 - national-rank: 2340 initial, 2262 final, 78 progress.
 - effort: 8 hours during challenges, productivity 0.08125 points/hour.
 
+sol(code): #0 codeabbey, 50 (5.22)
+
+
+- others: 5 in, 12 out, 17 total.
+
+- score: 22.61 initial, 27.83 final, 5.22 progress.
+
+- global-rank: 6781 initial, 6244 final, 537 progress.
+
+- national-rank: 127 initial, 109 final,18 progress.
+
+- effort: 7.1 hours during immersion, productivity 0.74 points/hour.
+
+
 --------------------------------------- CODE WARS ---------------------------------------------------
 
-sol(code): #0 hackerrank, basic-calculator (1)
+sol(code): #0 hackerrank, twostring (25.00)
     
 - others: 0 in, 0 out, 0 total.
-- score: 01.00 initial, 02.00 final, 1 progress.
+- score: 21.00 initial, 46.00 final, 25.00 progress.
 - global-rank: 2961 initial, 2261 final, 700 progress.
 - national-rank: 2340 initial, 2262 final, 78 progress.
-- effort: 11 hours during challenges, productivity 0.09 points/hour.
+- effort: 11 hours during immersion, productivity 6.09 points/hour.
 
 --------------------------------------- HACK THE BOX ---------------------------------------------------
 

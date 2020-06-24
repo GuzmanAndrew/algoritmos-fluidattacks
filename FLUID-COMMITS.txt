@@ -24,7 +24,6 @@ sol(code): #0 codeabbey, 50 (5.22)
 - score: 22.61 initial, 27.83 final, 5.22 progress.
 
 - global-rank: 6781 initial, 6244 final, 537 progress.
-
 - national-rank: 127 initial, 109 final,18 progress.
 
 - effort: 7.1 hours during immersion, productivity 0.74 points/hour.

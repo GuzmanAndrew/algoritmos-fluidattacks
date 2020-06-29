@@ -13,16 +13,15 @@ def data_entry()
 end
 
 def rounding(array)
-    menor = [] of Int32
-  
-    if array[0] < array[1]
-        menor << array[0]
-    elsif array[1] < array[0]
-        menor << array[1]
+    total = array[0] * array[1] + array[2]
+    total = total.to_s.split("")
+    result = [] of Int32
+    total.each do |x|
+        total = x.to_i
+        result << total
     end
-
-    puts menor
-  
+    result = result.reduce(0) { |sum, num| sum + num }
+    puts result
 end
   
 data = data_entry()

@@ -43,7 +43,7 @@ sol(hack): #0 rootme, hash-sha (5)
 - score: 30 initial, 35 final, 5 progress.
 - global-rank: 38538 initial, 23403 final, 15135 progress.
 - national-rank: 73 initial, 72 final, 1 progress.
-- effort: 11 hours during challenges, productivity 54.54 points/hour.
+- effort: 11 hours during immersion, productivity 54.54 points/hour.
 
 
 ---------------------------------------- refactor -----------------------------

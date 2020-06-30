@@ -16,17 +16,13 @@ sol(code): #0 hackerrank, twostring (25.00)
 - national-rank: 2340 initial, 2262 final, 78 progress.
 - effort: 8 hours during challenges, productivity 0.08125 points/hour.
 
-sol(code): #0 codeabbey, 50 (5.22)
-
+sol(code): #0 codeabbey, 011 (3.57)
 
 - others: 5 in, 12 out, 17 total.
-
-- score: 22.61 initial, 27.83 final, 5.22 progress.
-
+- score: 7.56 initial, 11.13 final, 3.57 progress.
 - global-rank: 6781 initial, 6244 final, 537 progress.
 - national-rank: 127 initial, 109 final,18 progress.
-
-- effort: 7.1 hours during immersion, productivity 0.74 points/hour.
+- effort: 4 hours during immersion, productivity 0.89 points/hour.
 
 
 --------------------------------------- CODE WARS ---------------------------------------------------

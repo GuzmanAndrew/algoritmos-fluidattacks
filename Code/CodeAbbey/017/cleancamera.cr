@@ -21,7 +21,7 @@ def checksum(array)
     val = result % limit
     puts val
 end
-  
+
 get_data = read_data_file()
 get_data.each do |x|
     checksum(x)
